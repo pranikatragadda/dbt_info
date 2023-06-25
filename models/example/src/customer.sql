@@ -1,7 +1,6 @@
-select 
-    id as customer_id,
-    first_name,
-    last_name,
-    email
-from {{ source('PUBLIC', 'CUSTOMER') }}
+with source_data AS
+(
+select * from {{ source('customer_metadata', 'customer') }}
+)
 
+select * from customerdata
