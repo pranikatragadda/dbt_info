@@ -1,6 +1,6 @@
 
-with CUSTOMERS AS
-(
-select * from {{ source('public', 'CUSTOMERS') }}
-)
-select * from customers
+select 
+    id as customer_id,
+    first_name,
+    last_name
+from {{ source('public', 'customers') }}
