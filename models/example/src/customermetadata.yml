@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: customer_metadata
+    database: dbt_database
+    schema: public
+    tables:
+      - name: customer
+      - name: orders
+      - name: PAYMENTS
