@@ -3,5 +3,4 @@ select
     first_name,
     last_name,
     email
-from {{ source('PUBLIC', 'CUSTOMER') }}
-
+from {{ source('customer_metadata', 'CUSTOMER') }}
