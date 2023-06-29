@@ -1,6 +1,6 @@
-with source_data AS
-(
-select * from {{ source('customer_metadata', 'orders') }}
-)
-
-select * from ordersdata
+select 
+     id as order_id,
+    user_id as customer_id,
+    order_date,
+    status
+from {{ source('cust_data', 'orders') }}

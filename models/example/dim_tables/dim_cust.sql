@@ -1,5 +1,5 @@
 {{ config (
-    materialized="view"
+    materialized="table"
 )}}
 
 with customers as (
@@ -9,7 +9,7 @@ with customers as (
         first_name,
         last_name
 
-    from {{ ref('stg_customer')}}
+    from {{ source('cust_data', 'customer') }}
 
 ),
 
@@ -21,7 +21,7 @@ orders as (
         order_date,
         status
 
-    from {{ ref('stg_order')}}
+    from {{ source('cust_data', 'orders') }}
 
 ),
 
