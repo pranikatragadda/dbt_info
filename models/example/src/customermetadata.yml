@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: customer_metadata
-    database: DBT_DATABASE
-    schema: DBT_DEMO
+    database: SAMP
+    schema: PUBLIC
     tables:
       - name: customer
       - name: orders
